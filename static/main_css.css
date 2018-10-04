@@ -1,0 +1,65 @@
+/* html, body{
+  height: 100%;
+  margin: 0;
+  text-align: center;
+  background-color: #006666;
+  color: #e6ffff;
+}
+
+.row{
+  height: 100%;
+  width: 100%;
+}
+
+.col{
+  height: 100%;
+  width: 15%;
+}
+
+.container{
+  margin: 0 auto;
+  width: 70%;
+  overflow: hidden;
+  text-align: center;
+  align-items: center;
+  /* margin-left: auto;
+  margin-right: auto; */
+}
+
+/* .container-message{
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+} */
+
+/* .table{
+  text-align: center;
+  white-space: initial;
+  text-overflow: inherit;
+} */
+
+/* thead {
+    text-align: center;
+} */ */
+
+.dataframe{
+  align-self: center;
+  text-align: center;
+}
+
+.centerBlock {
+  display: table;
+  margin: auto;
+}
+
+.col{
+  margin-top: 20px;
+}
+
+.btn-col{
+  align-items: flex-end;
+}
+
+.map{
+  align-items: flex-start;
+}
