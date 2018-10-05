@@ -4,6 +4,7 @@ from geopy.geocoders import Nominatim
 import pandas
 import folium
 import os
+import webbrowser
 
 app = Flask(__name__)
 
@@ -26,13 +27,13 @@ def success():
             # create df
             df = pandas.read_csv("uploaded_"+file.filename, encoding='latin-1')
 
-            if 'address' in df.columns:
-                tr_name= 'address'
-            elif 'Address' in df.columns:
-                tr_name = 'Address'
+            # if 'address' in df.columns:
+            #     tr_name= 'address'
+            # elif 'Address' in df.columns:
+            #     tr_name = 'Address'
 
             nom = Nominatim()
-            df["Coordinates"] = df[tr_name].apply(nom.geocode)
+            df["Coordinates"] = df["Address"].apply(nom.geocode)
             df["Latitude"] = df["Coordinates"].apply(lambda x: x.latitude if x!=None else None)
             df["Longitude"] = df["Coordinates"].apply(lambda x: x.longitude if x!=None else None)
 
@@ -77,6 +78,7 @@ def map():
     map.save("./templates/map.html")
 
     # show the map
+
     return render_template("map.html")
 
 if __name__ == '__main__':

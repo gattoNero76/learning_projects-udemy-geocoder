@@ -1,4 +1,4 @@
-{% extends 'base.html '%}
+{% extends 'base.html' %}
 
 {% block title %}
   <title>Success geocoder</title>
@@ -32,16 +32,22 @@
   </div>
 
   <div class="row cont-btn">
-    <div class="col btn-col">
+    <div class="col col_20">
+
+    </div>
+    <div class="col btn-col col_30">
       {% include btn ignore missing %}
     </div>
-    <div class="col map">
+    <div class="col map col_30">
       <form action={{url_for('map')}} methods=["GET","POST"]>
         <!-- <input type="file" name="file"> -->
-        <button type="button " class="btn btn-secondary" name="submit">Show the map</button>
+        <button type="button " class="btn btn-secondary" name="submit" onclick="openNewWin('http://ok.ddw.kz/index.php?route=information/contact')">Show the map</button>
+        <!-- <input type="button" value="Контакты" onclick="openNewWin('http://ok.ddw.kz/index.php?route=information/contact')">
+        onclick="openNewWin('http://ok.ddw.kz/index.php?route=information/contact')" -->
       </form>
     </div>
-
+    <div class="col col_20">
+    </div>
   </div>
 
 </div>
