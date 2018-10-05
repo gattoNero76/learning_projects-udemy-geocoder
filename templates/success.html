@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  <title>Success geocoder</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid text-center">
+  <h1>Super geocoder</h1>
+  <p>Please upload your CSV file. The values containing addresses should be in a column named <i>address</i> or <i>Address</i></p>
+
+  <div class="row upload align-items-center">
+    <div class="col">
+      <form action={{url_for('success')}} method="POST" enctype="multipart/form-data">
+          <input type="file" name="file">
+          <button type="button " class="btn btn-secondary" name="submit">Read the file</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="row cont-message align-items-center">
+    <!-- <div class="col col-2">
+    </div> -->
+    <div class="col table">
+      <div class="centerBlock">
+        {{ table | safe }}
+      </div>
+    </div>
+    <!-- <div class="col col-2">
+    </div> -->
+  </div>
+
+  <div class="row cont-btn">
+    <div class="col col_20">
+
+    </div>
+    <div class="col btn-col col_30">
+      {% include btn ignore missing %}
+    </div>
+    <div class="col map col_30">
+      <form action={{url_for('map')}} methods=["GET","POST"]>
+        <!-- <input type="file" name="file"> -->
+        <button type="button " class="btn btn-secondary" name="submit" onclick="openNewWin('http://ok.ddw.kz/index.php?route=information/contact')">Show the map</button>
+        <!-- <input type="button" value="Контакты" onclick="openNewWin('http://ok.ddw.kz/index.php?route=information/contact')">
+        onclick="openNewWin('http://ok.ddw.kz/index.php?route=information/contact')" -->
+      </form>
+    </div>
+    <div class="col col_20">
+    </div>
+  </div>
+
+</div>
+
+{% endblock%}
