@@ -45,7 +45,6 @@ def success():
 
             # create the table
             df_table = df.to_html()
-
             # передадим таблицу в html и отрендерим страничку с таблицей и кнопкой
             return render_template("success.html", table = df_table, btn="download.html")
         except:
@@ -76,9 +75,7 @@ def map():
 
     map.add_child(fgv)
     map.save("./templates/map.html")
-
     # show the map
-
     return render_template("map.html")
 
 if __name__ == '__main__':
